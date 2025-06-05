@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VQTBKP87MK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-VQTBKP87MK");
+    </script>
+
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Humanoid Synergy Editor Leveraging Postural Synergies for Kinematically Optimal Free-Space Control"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Humanoid Synergy Editor Leveraging Postural Synergies for Kinematically Optimal Free-Space Control
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/index.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+      google.load("jquery", "1.3.2");
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+          inlineMath: [['$', '$']]
+          },
+          "HTML-CSS": {
+          availableFonts: ["TeX", "STIX-Web", "Asana-Math", "Latin-Modern"], // Specify the desired font here
+          preferredFont: "STIX-Web", // Set the preferred font
+          webFont: "STIX-Web" // Set the web font to use
+          },
+      });
+    </script>
+    <script
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Humanoid Synergy Editor Leveraging Postural Synergies for Kinematically Optimal Free-Space Control
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  Rhea Malhotra<sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  William Chong<sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  Catie Cuan<sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  Oussama Khatib<sup>1</sup>
+                </span>
+              </div>
+              
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <sup>1</sup>Stanford University
+                </span>
+              </div>
+
+              <br />
+              <img src="./media/figures/stanford.png" width="15%" />
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/abs/2501.06994"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a
+                      href=""
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fa-brands fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Title Card + Caption -->
+    <section class="hero teaser">
+      <div class="container is-fullhd">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-vcentered  is-centered">
+              <video
+                id="teaser"
+                class="intro-video"
+                autoplay
+                muted
+                height="100%"
+              >
+                <source src="media/intro/introvid.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <br />
+            <h2 class="subtitle has-text-centered">
+              <span class="dmtpi">SynSculptor</span>
+              presents a <b>humanoid motion synergy editing</b> tool for kinematically optimal and stylistically accurate humanoid control
+               directly imitating human free space dance motion in real time.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carousel -->
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            
+            <div class="item">
+              <video
+                class="carousel-rollout"
+                preload="none"
+                muted
+                loop
+                controls
+                playsinline
+                style="height:100%; width:auto;"
+                data-src="media/tracking_vids/BALLROOM2.mp4"
+              ></video>
+            </div>
+            
+
+            <div class="item">
+              <video
+                class="carousel-rollout"
+                preload="none"
+                muted
+                loop
+                controls
+                playsinline
+                style="height:100%; width:auto;"
+                data-src="media/tracking_vids/HIPHOP.mp4"
+              ></video>
+            </div>
+            
+
+            <div class="item">
+              <video
+                class="carousel-rollout"
+                preload="none"
+                muted
+                loop
+                controls
+                playsinline
+                style="height:100%; width:auto;"
+                data-src="media/tracking_vids/IRISH.mp4"
+              ></video>
+            </div>
+            
+
+            <div class="item">
+              <video
+                class="carousel-rollout"
+                preload="none"
+                muted
+                loop
+                controls
+                playsinline
+                style="height:100%; width:auto;"
+                data-src="media/tracking_vids/JAZZ.mp4"
+              ></video>
+            </div>
+            
+
+            <div class="item">
+              <video
+                class="carousel-rollout"
+                preload="none"
+                muted
+                loop
+                controls
+                playsinline
+                style="height:100%; width:auto;"
+                data-src="media/tracking_vids/LYRICAL.mp4"
+              ></video>
+            </div>
+            
+            
+            <div class="item">
+              <video
+                class="carousel-rollout"
+                preload="none"
+                muted
+                loop
+                controls
+                playsinline
+                style="height:100%; width:auto;"
+                data-src="media/tracking_vids/MODERN.mp4"
+              ></video>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <h2 class="subtitle has-text-centered">
+      <br />
+      We evaluate <span class="dmtpi">SynSculptor</span> across realism and kinematics metrics for
+      robustness in representation of fluid human freespace motion, as well as ability to fine tune 
+      and stylistically project generative policies to real human tracked synergies.
+    </h2>
+
+    <hr />
+
+    <!-- Abstract. -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Humanoid control remains a central challenge in robotics, as directly replicating full human degrees of freedom (DoFs) incurs significant 
+                computational costs and is constrained by mechanical and energetic limitations. To address this, we investigate the hierarchical structure of human movement, where a small set of dominant synergies govern global joint-space coordination. 
+                We introduce <span class="dmtpi">SynSculptor</span>, a humanoid motion editing system that leverages synergy-based task space mapping for efficient, physically plausible motion generation. we collect and structure over 3 hours of motion capture data spanning 10 dance genres performed by 20 dancers. 
+                We extract primary postural synergies via eigenvalue decomposition of momentum-parsed joint velocity trajectories, constructing a style-conditioned synergy library for free-space motion generation. Biomechanical simulations in OpenSim reveal that the human musculoskeletal 
+                model achieves 3.3X greater kinematic efficiency compared to direct motion mapping onto a Supraped HRP4c humanoid across a series of baseline tasks. Our extracted kinematic synergy primitives reproduce full-body poses with 98\% fidelity using only three joint-space components. 
+                Finally, we integrate synergy-conditioned representations into MotionGPT, a motion-language transformer, enabling supervised robotic fine-tuning through null-space projections for real-time, personalized, training-free humanoid control. \acro enables energy-efficient, 
+                style-controllable humanoid motion generation, bridging the gap between human biomechanics and robotic embodiment.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+      </div>
+
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
+    <div class="column is-two-thirds">
+      <h2 class="title is-3">Video</h2>
+      <div class="publication-video">
+        <iframe src="https://www.youtube.com/embed/TB0g52N-3_Y?rel=0&amp;showinfo=0"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div> -->
+    </section>
+
+    <hr />
+
+    <!-- Data Collection -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <h2 class="title is-3">Real-Time Controller</h2>
+
+            <!-- Extracting Motion Tracks -->
+            <h3 class="title is-5 has-text-justified">
+              Task-Specific Control of HRP4c
+            </h3>
+            <div class="content has-text-justified">
+              <p>
+                We develop a real-time framework for mapping OptiTrack motion capture data onto a Supraped HRP4c humanoid. Human motion was tracked using OptiTrack's 
+                41-marker baseline suit and streamed via NatNetLinux, with the user first assuming a reference posture to initialize landmark-specific frames. 
+                Relative poses and velocities of each anatomical landmark were computed from these frames and 
+                provided as inputs to a constraint-consistent operational space controller, which managed a prioritized stack-of-tasks—pose, orientation, 
+                then joint posture. Joint torques were computed at 1 kHz and executed in real time by OpenSai dynamics simulation engine at the same rate.
+              </p>
+            </div>
+            <section class="section">
+              <div class="container">
+                <h3 class="title is-4">Stack-Of-Tasks Hierarchy</h3>
+                <table class="table is-fullwidth is-bordered is-striped">
+                  <thead>
+                    <tr>
+                      <th class="has-text-centered">Priority Level</th>
+                      <th class="has-text-centered">Anatomical Landmark</th>
+                      <th class="has-text-centered">Task</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="has-text-centered">1</td>
+                      <td>Pelvis</td>
+                      <td>Pose</td>
+                    </tr>
+                    <tr>
+                      <td class="has-text-centered">2</td>
+                      <td>Right Foot</td>
+                      <td>Pose</td>
+                    </tr>
+                    <tr>
+                      <td class="has-text-centered">3</td>
+                      <td>Left Foot</td>
+                      <td>Pose</td>
+                    </tr>
+                    <tr>
+                      <td class="has-text-centered">4</td>
+                      <td>Upper Torso</td>
+                      <td>Orientation</td>
+                    </tr>
+                    <tr>
+                      <td class="has-text-centered">5</td>
+                      <td>Right Hand</td>
+                      <td>Pose</td>
+                    </tr>
+                    <tr>
+                      <td class="has-text-centered">6</td>
+                      <td>Left Hand</td>
+                      <td>Pose</td>
+                    </tr>
+                    <tr>
+                      <td class="has-text-centered">7</td>
+                      <td>Head</td>
+                      <td>Orientation</td>
+                    </tr>
+                    <tr>
+                      <td class="has-text-centered">8</td>
+                      <td>Right Elbow</td>
+                      <td>Orientation</td>
+                    </tr>
+                    <tr>
+                      <td class="has-text-centered">9</td>
+                      <td>Left Elbow</td>
+                      <td>Orientation</td>
+                    </tr>
+                    <tr>
+                      <td class="has-text-centered">10</td>
+                      <td>Posture</td>
+                      <td>Joint</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            
+
+            <!-- Extracting Grasps -->
+            <h3 class="title is-5 has-text-justified">
+              Postural Synergy Extraction
+            </h3>
+            <video
+              id="system-overview-video"
+              class="hand-grasp-video"
+              autoplay
+              muted
+              loop
+            >
+              <source src="media/builds/hand_grasps.mp4" type="video/mp4" />
+            </video>
+            <div class="content has-text-justified">
+              <p>
+                To infer per-timestep grasp actions from human videos, we use a
+                heuristic based on the proximity of hand keypoints to the
+                object(s) being manipulated. For each task, we first obtain a
+                pixel-wise mask of the object using
+                <a href="https://arxiv.org/abs/2303.05499" target="_blank"
+                  >GroundingDINO</a
+                >
+                and
+                <a href="https://ai.meta.com/sam2/" target="_blank">SAM 2</a>.
+                Then, if the number of pixels between the object mask and the
+                keypoints on the fingertips fall below some threshold, we assume
+                a grasp. By loosely matching the positioning and ordering of
+                keypoints between the human hand and robot gripper, we create an
+                explicit correspondence between human and robot action
+                representations in the image plane.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+    <!-- Inference -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Video -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">SynSculptor Editor Interface</h2>
+            <div class="columns is-vcentered is-centered">
+              <video
+                id="system-overview-video"
+                class="triangulation-video"
+                autoplay
+                muted
+                loop
+              >
+                <source src="media/builds/triangulation.mp4" type="video/mp4" />
+              </video>
+              <br />
+            </div>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="columns is-centered">
+          <div class="column">
+            <p>
+              MT&#x2011;<i>&pi;</i> represent actions as 2D image trajectories
+              which are not directly executable on a robot. To bridge this, we
+              predict motion tracks from two third-person camera views and treat
+              them as pixelwise correspondences. Using stereo triangulation with
+              known extrinsics, we recover 3D keypoints and compute the rigid
+              transformation between consecutive timesteps. This yields a 6DoF
+              trajectory, $a_{t:t+T}$, for robot execution. In practice, we use
+              a much shorter prediction horizon ($H=16 \ll T$) for more
+              closed-loop reasoning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+
+    <!-- Results -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Video -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Evaluations</h2>
+            <div class="columns is-vcentered is-centered"></div>
+          </div>
+        </div>
+
+        <!-- Description and List -->
+        <div class="columns is-centered">
+          <div class="column">
+            <p>
+              We evaluate MT&#x2011;<i>&pi;</i> on a suite of table-top tasks
+              against two commonly used image-based IL algorithms:
+              <a
+                href="https://diffusion-policy.cs.columbia.edu/"
+                target="_blank"
+                >Diffusion Policy (DP)</a
+              >
+              and
+              <a href="https://tonyzhaozh.github.io/aloha/" target="_blank"
+                >ACT</a
+              >.
+            </p>
+            <ul style="text-align: left;">
+              <li>
+                MT&#x2011;<i>&pi;</i> shares the diffusion backbone with DP but
+                differs by training on cross-embodiment data and using an
+                image-based motion-track action space, unlike the 6DoF
+                proprioceptive action space of DP and ACT.
+              </li>
+              <li>
+                Unlike the baselines, MT&#x2011;<i>&pi;</i> does not take
+                wrist-camera observations as input, as these are typically
+                absent in human videos.
+              </li>
+              <li>
+                These design choices are intended to attribute differences in
+                policy performance to the training data distribution and action
+                space employed by policies, rather than other factors.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <table
+              id="methods_comparison"
+              style="width: 100%;  border-collapse: collapse; margin-top: -10px; margin-bottom: -10px;"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black;"
+                  >
+                    Method
+                  </th>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black;"
+                  >
+                    Human and <br />
+                    Robot Data
+                  </th>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black;"
+                  >
+                    Wrist <br />
+                    Camera Input
+                  </th>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black;"
+                  >
+                    6DoF EE Delta <br />
+                    Action Space
+                  </th>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black;"
+                  >
+                    Diffusion <br />
+                    Backbone
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border-right: 2px solid black;">
+                    <a
+                      href="https://diffusion-policy.cs.columbia.edu/"
+                      target="_blank"
+                      >DP</a
+                    >
+                  </td>
+                  <td>&#10007;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                </tr>
+                <tr>
+                  <td style="border-right: 2px solid black;">
+                    <a
+                      href="https://tonyzhaozh.github.io/aloha/"
+                      target="_blank"
+                      >ACT</a
+                    >
+                  </td>
+                  <td>&#10007;</td>
+                  <td>&#10003;</td>
+                  <td>&#10003;</td>
+                  <td>&#10007;</td>
+                </tr>
+                <tr style="">
+                  <td
+                    style="border-right: 2px solid black; background-color: #FFA5004D;"
+                  >
+                    <strong>MT-<i>&pi;</i></strong>
+                  </td>
+                  <td style="background-color: #FFA5004D;">&#10003;</td>
+                  <td style="background-color: #FFA5004D;">&#10007;</td>
+                  <td style="background-color: #FFA5004D;">&#10007;</td>
+                  <td style="background-color: #FFA5004D;">&#10003;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h3 class="title is-4">Realism: Foot Slipping</h3>
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="content">
+            <p>
+              We consider 4 whole-body movement tasks: squatting,
+              In place stepping, walking in a circle, and jumping jacks.
+              across 20 individuals executing each movement for 10-15 second increments
+              we analyze the realism as a proxy of foot slipping ratio.
+            </p>
+          </div>
+        </div>
+
+        <br />
+        <div class="chart-container" style="width: 80%; margin: auto;">
+          <canvas id="taskBarChart"></canvas>
+          <div id="video-container" style="margin-top: 20px;"></div>
+        </div>
+        <hr />
+
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h3 class="title is-4">Kinematic Efficacy: Power</h3>
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="content">
+            <p>
+              Further we analyze the power to demonstrate that operating in the synergy space span offers kinematic advantages in power consumption.
+            </p>
+          </div>
+        </div>
+
+        <br />
+        <div class="chart-container" style="width: 80%; margin: auto;">
+          <canvas id="taskBarChart"></canvas>
+          <div id="video-container" style="margin-top: 20px;"></div>
+        </div>
+
+
+
+
+        <hr />
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h3 class="title is-4">Kinematic Efficacy: Power</h3>
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="content">
+            <p>
+              A benefit of motion tracks as a representation is that they allow
+              for positive transfer of motions captured in human demonstrations
+              to an embodied agent. This is enabled by
+              <i>explicitly</i> representing human motions within our action
+              space, instead of only implicitly (i.e. via latent embeddings). To
+              this end, we evaluate two variants of MT&#x2011;<i>&pi;</i>
+              (trained on human + robot data vs. robot data only) against DP and
+              ACT for the task of closing a drawer.
+            </p>
+            <h3 class="title is-5">Data</h3>
+            <p>
+              During data collection, we only collect demonstrations with the
+              robot closing the drawer to the right. However, human videos
+              include closing the drawer in both directions.
+            </p>
+
+            <div class="container">
+              <div class="video-container">
+                <div class="left-column">
+                  <div class="video-wrapper">
+                    <video class="data-video" autoplay muted loop controls>
+                      <source
+                        src="media/drawer/robot_demos.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <p class="video-description">
+                      Robot Demos: Only closes the drawer to the right.
+                    </p>
+                  </div>
+                </div>
+                <div class="right-column">
+                  <div class="nested-columns">
+                    <div class="video-wrapper">
+                      <video class="data-video" autoplay muted loop controls>
+                        <source
+                          src="media/drawer/human_demos_left.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                    <div class="video-wrapper">
+                      <video class="data-video" autoplay muted loop controls>
+                        <source
+                          src="media/drawer/human_demos_right.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </div>
+                  <p class="video-description">
+                    Human Demos: Closes the drawer in both directions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="title is-5">Inference</h3>
+            <p>
+              While all policies successfully close the drawer when placed to
+              the right, only MT-$\pi$ trained on human + robot data can
+              generalize to closing the drawer to the left, as it
+              <i>directly</i> leverages the action labels in image space from
+              human demonstrations.
+            </p>
+
+            <div class="columns is-centered is-vcentered">
+              <div class="column is-half">
+                <video class="data-video" autoplay muted loop controls>
+                  <source
+                    src="media/drawer/mt_pi_human_robot.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <p class="has-text-centered" style="margin-top: 2px;">
+                  MT&#x2011;<i>&pi;</i> (H + R): Generalizes human actions to
+                  the left.
+                </p>
+              </div>
+              <div class="column is-half">
+                <video class="data-video" autoplay muted loop controls>
+                  <source
+                    src="media/drawer/mt_pi_robot_only.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <p class="has-text-centered" style="margin-top: 2px;">
+                  MT&#x2011;<i>&pi;</i> (Robot Only): No action labels going
+                  left.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <h3 class="title is-5">Quantitative Results</h3>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <table
+              id="close_direction_comparison"
+              style="width: 100%; border-collapse: collapse; margin-top: -10px; margin-bottom: -10px; table-layout: fixed;"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black; width: 30%;"
+                  >
+                    Close Direction
+                  </th>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black; width: 17.5%;"
+                  >
+                    DP
+                  </th>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black; width: 17.5%;"
+                  >
+                    ACT
+                  </th>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black; width: 17.5%;"
+                  >
+                    MT-<i>&pi;</i> (Robot Only)
+                  </th>
+                  <th
+                    class="centered-header"
+                    style="border-bottom: 2px solid black; width: 17.5%; background-color: #FFA5004D;"
+                  >
+                    MT-<i>&pi;</i> (H+R)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border-right: 2px solid black;">
+                    Left (In $D_{\text{robot}} \cup D_{\text{human}}$)
+                  </td>
+                  <td><strong>20/20</strong></td>
+                  <td>17/20</td>
+                  <td><strong>20/20</strong></td>
+                  <td style="background-color: #FFA5004D;">
+                    <strong>20/20</strong>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border-right: 2px solid black;">
+                    Right (<em>Only</em> in $D_{\text{human}}$)
+                  </td>
+                  <td>0/10</td>
+                  <td>0/10</td>
+                  <td>0/10</td>
+                  <td style="background-color: #FFA5004D;">
+                    <strong>18/20</strong>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <hr />
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h3 class="title is-4">How Much Data is Enough?</h3>
+          </div>
+        </div>
+
+        <!-- Description and List -->
+        <div class="row is-centered">
+          <p>
+            We evaluate MT&#x2011;<i>&pi;</i> on a medium-complexity task to
+            study the policy's performance under varying amounts of both human
+            and robot data.
+          </p>
+          <br />
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <img src="media/figures/heatmap.png" width="100%" />
+            </div>
+          </div>
+
+          <ul style="text-align: left; margin-top: 15px; margin-left: 40px;">
+            <li>
+              MT&#x2011;<i>&pi;</i> without any human demonstrations matches the
+              success rates of DP and ACT given the same amount of robot
+              demonstrations, suggesting that predicting actions in image-space
+              is a scalable action representation even with just robot data.
+            </li>
+            <li>
+              MT&#x2011;<i>&pi;</i> matches the performance of baselines despite
+              using 40% less minutes of robot demonstrations by leveraging
+              &#x7e;10 minutes of human demonstrations.
+            </li>
+            <li>
+              Even for a fixed, small amount of teleoperated robot
+              demonstrations, MT&#x2011;<i>&pi;</i> can obtain noticeably higher
+              policy performance simply by scaling up human video alone on the
+              order of just minutes.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content has-text-centered">
+              <p>
+                Website template borrowed from
+                <a href="https://github.com/nerfies/nerfies.github.io"
+                  >NeRFies</a
+                >
+                and <a href="https://peract.github.io/">PerAct</a> and
+                <a href="https://voxposer.github.io/">VoxPoser</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
